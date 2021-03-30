@@ -4,6 +4,7 @@ Solve CS20 Assignment based on Tensoflow 1x.
 
 # Installation guide 🔥
 
+
 ```
 $ git clone https://github.com/namtranase/cs20
 $ cd cs20
