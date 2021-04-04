@@ -3,7 +3,7 @@
 Solve CS20 Assignment based on Tensoflow 1x.
 
 
-# Installation guide 🔥
+# Installation guide
 
 
 ```
@@ -14,10 +14,6 @@ $ cd cs20
 python3 -m venv .venv && source .venv/bin/activate
 $ pip install -r requirements.txt
 
-# Create the virtual environment python
-$ conda create -n svm --file package-list.txt
-
-$ pip install -e .
 $ pre-commit install
 ```
 
@@ -36,20 +32,3 @@ $ pre-commit install
   - Usually, you can just `git commit` and `pre-commit` will run itself.
   - If you want to run it manually, use `pre-commit run --all-files` to run all files, `pre-commit run <hook_id>` to run a specific hook.
 - Remember to put understandable commit descriptions.
-
-# API
-
-## Install
-
-```
-  # Install the package
-  pip install -e .
-```
-
-## Usage
-
-```
-import cs20
-print("Updating...)
-```
-

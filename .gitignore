@@ -130,7 +130,11 @@ dmypy.json
 
 .vscode/
 Playground/
+examples/
 graphs/
 graph/
-data/mnist 
+data/mnist
 data/notMnist
+data/text8.zip
+checkpoints
+visualization
