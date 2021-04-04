@@ -131,3 +131,6 @@ dmypy.json
 .vscode/
 Playground/
 graphs/
+graph/
+data/mnist 
+data/notMnist

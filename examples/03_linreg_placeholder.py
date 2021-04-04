@@ -9,12 +9,14 @@ os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 import time
 
 import numpy as np
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import tensorflow as tf
 
 import utils
 
-DATA_FILE = 'data/birth_life_2010.txt'
+DATA_FILE = 'examples/data/birth_life_2010.txt'
 
 # Step 1: read in data from the .txt file
 data, n_samples = utils.read_birth_life_data(DATA_FILE)
@@ -66,4 +68,4 @@ print('Took: %f seconds' %(time.time() - start))
 plt.plot(data[:,0], data[:,1], 'bo', label='Real data')
 plt.plot(data[:,0], data[:,0] * w_out + b_out, 'r', label='Predicted data')
 plt.legend()
-plt.show()
+plt.savefig('examples/results/03_linreg_placeholder.png')
