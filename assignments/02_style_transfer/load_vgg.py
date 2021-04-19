@@ -55,8 +55,14 @@ class VGG(object):
         """
         ###############################
         ## TO DO
-        out = self._weights(layer_idx, layer_name)
-        # out = None
+        with tf.variable_scope(layer_name):
+            W, b = self._weights(layer_idx, layer_name)
+            W = tf.constant(W, name="Weights")
+            b = tf.constant(b, name="bias")
+            conv2d = tf.nn.conv2d(
+                prev_layer, filter=W, strides=[1, 1, 1, 1], padding="SAME"
+            )
+            out = tf.nn.relu(conv2d + b)
         ###############################
         setattr(self, layer_name, out)
 
@@ -73,7 +79,10 @@ class VGG(object):
         """
         ###############################
         ## TO DO
-        out = None
+        with tf.variable_scope(layer_name):
+            out = tf.nn.avg_pool(
+                prev_layer, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding="SAME"
+            )
         ###############################
         setattr(self, layer_name, out)
 
